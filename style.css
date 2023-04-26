@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap");
+
+/*
+
+- Dark cyan: hsl(158, 36%, 37%)
+- Cream: hsl(30, 38%, 92%)
+
+### Neutral
+
+- Very dark blue: hsl(212, 21%, 14%)
+- Dark grayish blue: hsl(228, 12%, 48%)
+- White: hsl(0, 0%, 100%) 
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(30, 38%, 92%);
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+p {
+  font-size: 14px;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  align-items: stretch;
+  border-radius: 10px;
+}
+
+.container > div {
+  flex: 2;
+}
+
+.container > div:nth-of-type(1) {
+  background-image: url(/images/image-product-desktop.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* padding: 1em; */
+}
+
+.content {
+  padding: 1rem;
+  background-color: hsl(0, 0%, 100%);
+}
+
+.content span:nth-of-type(1) {
+  font-family: "Montserrat";
+  color: hsl(228, 12%, 48%);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.content div {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.content h2 {
+  font-size: 2.4rem;
+  font-family: "Fraunces";
+  margin-block: 1rem;
+}
+
+.content p {
+  font-family: "Montserrat";
+  color: hsl(228, 12%, 48%);
+}
+
+.current_price {
+  font-size: 2rem;
+  color: hsl(158, 36%, 37%);
+  font-weight: 700;
+}
+
+.prev_price {
+  text-decoration: line-through;
+}
+
+.cart {
+  width: 100%;
+  padding: 1em;
+  border-radius: 10px;
+  background-color: hsl(158, 36%, 37%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  cursor: pointer;
+}
+
+.cart:hover {
+  background-color: hsl(212, 21%, 14%);
+  transition: 1s all;
+}
+
+@media (max-width: 400px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .container > div {
+    flex: 0;
+  }
+
+  .container > .empty {
+    height: 200px;
+    background-image: url(./images/image-product-mobile.jpg);
+    background-repeat: no-repeat;
+  }
+}
